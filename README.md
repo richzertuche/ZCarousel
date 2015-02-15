@@ -1,4 +1,6 @@
 # ZCarousel
+
+[![Join the chat at https://gitter.im/richzertuche/ZCarousel](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/richzertuche/ZCarousel?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 <h6>Swift Carousel using a Paged UIScrollView</h6>
 
 <p>This is a infite carousel made using a Paged UIScrollView 

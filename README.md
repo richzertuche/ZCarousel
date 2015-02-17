@@ -7,6 +7,10 @@ and some easy maths. You can create a Carousel of UIImageViews or UIButtons.
 <br>
 Carousels must be of at least 3 items and as long as you want.<br></p>
 <br>
+
+[![ZCarousel](http://img.youtube.com/vi/0y5JBGjXVtU/0.jpg)](http://www.youtube.com/watch?v=0y5JBGjXVtU)
+
+<br>
 **You need to add the ZCarousel Delegate to your Controller:**
 
 ```swift

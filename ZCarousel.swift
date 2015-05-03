@@ -29,8 +29,8 @@ class ZCarousel: UIScrollView, UIScrollViewDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override init() {
-        super.init()
+    init() {
+        super.init(frame: CGRectZero)
         super.pagingEnabled = true
         super.contentSize = CGSize(width: 0, height: self.frame.height)
         super.clipsToBounds = false
@@ -136,7 +136,7 @@ class ZCarousel: UIScrollView, UIScrollViewDelegate {
         self.scrollRectToVisible(middleImage.frame, animated: false)
     }
     
-    func scrollViewDidScroll(scrollView: ZCarousel) {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
         //1
         page = scrollView.contentOffset.x / self.frame.width
         //2
@@ -161,7 +161,7 @@ class ZCarousel: UIScrollView, UIScrollViewDelegate {
         }
     }
     
-    func scrollViewDidEndDecelerating(scrollView: ZCarousel) {
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         //1
         page = scrollView.contentOffset.x / self.frame.width
         //2

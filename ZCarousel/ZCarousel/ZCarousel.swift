@@ -56,10 +56,10 @@ class ZCarousel: UIScrollView, UIScrollViewDelegate {
         //a
         var finalButtons = titles
         //b
-        var firstItem       = titles[0]
-        var secondItem      = titles[1]
-        var almostLastItem  = titles[titles.count-2]
-        var lastItem        = titles.last
+        let firstItem       = titles[0]
+        let secondItem      = titles[1]
+        let almostLastItem  = titles[titles.count-2]
+        let lastItem        = titles.last
         //c
         finalButtons.insert(almostLastItem, atIndex: 0)
         finalButtons.insert(lastItem!, atIndex: 1)
@@ -77,7 +77,7 @@ class ZCarousel: UIScrollView, UIScrollViewDelegate {
                     self.frame.height)
             }
             //4
-            var button = UIButton(frame: buttonFrame)
+            let button = UIButton(frame: buttonFrame)
             button.setTitle(finalButtons[i], forState: UIControlState.Normal)
             button.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
             //6
@@ -99,10 +99,10 @@ class ZCarousel: UIScrollView, UIScrollViewDelegate {
         //a
         var finalImageViews = imagesToUSe
         //b
-        var firstItem       = imagesToUSe[0]
-        var secondItem      = imagesToUSe[1]
-        var almostLastItem  = imagesToUSe[imagesToUSe.count-2]
-        var lastItem        = imagesToUSe.last
+        let firstItem       = imagesToUSe[0]
+        let secondItem      = imagesToUSe[1]
+        let almostLastItem  = imagesToUSe[imagesToUSe.count-2]
+        let lastItem        = imagesToUSe.last
         //c
         finalImageViews.insert(almostLastItem, atIndex: 0)
         finalImageViews.insert(lastItem!, atIndex: 1)
@@ -111,7 +111,7 @@ class ZCarousel: UIScrollView, UIScrollViewDelegate {
         
         //2
         for i in 0..<finalImageViews.count {
-            var image = UIImage(named: finalImageViews[i])
+            let image = UIImage(named: finalImageViews[i])
             //3
             //println("\(i) - \(finalButtons[i])")
             if i != 0 {
@@ -121,7 +121,7 @@ class ZCarousel: UIScrollView, UIScrollViewDelegate {
                     self.frame.height)
             }
             //4
-            var imageView = UIImageView(frame: imageViewFrame)
+            let imageView = UIImageView(frame: imageViewFrame)
             imageView.image = image
             //6
             self.addSubview(imageView)

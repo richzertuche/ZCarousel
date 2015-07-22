@@ -40,10 +40,10 @@ class ViewController: UIViewController, ZCarouselDelegate {
     
     func ZCarouselShowingIndex(scrollview: ZCarousel, index: Int) {
         if scrollview == menu {
-            println("Showing Button at index \(index)")
+            print("Showing Button at index \(index)")
         }
         else if scrollview == images {
-            println("Showing Image at index \(index)")
+            print("Showing Image at index \(index)")
         }
     }
     

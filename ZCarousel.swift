@@ -26,21 +26,20 @@ class ZCarousel: UIScrollView, UIScrollViewDelegate {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        fatalError("init(coder:) has not been implemented")
+        self.initalizeScrollViewProperties()
     }
     
-    override init() {
-        super.init()
-        super.pagingEnabled = true
-        super.contentSize = CGSize(width: 0, height: self.frame.height)
-        super.clipsToBounds = false
-        super.delegate = self
-        super.showsHorizontalScrollIndicator = false
-        isImage = false
+    init() {
+        super.init(frame: CGRectZero)
+        self.initalizeScrollViewProperties()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.initalizeScrollViewProperties()
+    }
+    
+    func initalizeScrollViewProperties(){
         super.pagingEnabled = true
         super.contentSize = CGSize(width: 0, height: self.frame.height)
         super.clipsToBounds = false
@@ -53,7 +52,7 @@ class ZCarousel: UIScrollView, UIScrollViewDelegate {
         originalArrayCount = titles.count
         //1
         var buttonFrame = CGRectMake(0, 0, self.frame.size.width, self.frame.height)
-
+        
         //a
         var finalButtons = titles
         //b
@@ -72,10 +71,10 @@ class ZCarousel: UIScrollView, UIScrollViewDelegate {
             //3
             //println("\(i) - \(finalButtons[i])")
             if i != 0 {
-               buttonFrame = CGRectMake(buttonFrame.origin.x+buttonFrame.width,
-                                        self.frame.height/2-self.frame.height/2,
-                                        self.frame.size.width,
-                                        self.frame.height)
+                buttonFrame = CGRectMake(buttonFrame.origin.x+buttonFrame.width,
+                    self.frame.height/2-self.frame.height/2,
+                    self.frame.size.width,
+                    self.frame.height)
             }
             //4
             var button = UIButton(frame: buttonFrame)
@@ -136,7 +135,7 @@ class ZCarousel: UIScrollView, UIScrollViewDelegate {
         self.scrollRectToVisible(middleImage.frame, animated: false)
     }
     
-    func scrollViewDidScroll(scrollView: ZCarousel) {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
         //1
         page = scrollView.contentOffset.x / self.frame.width
         //2
@@ -161,7 +160,7 @@ class ZCarousel: UIScrollView, UIScrollViewDelegate {
         }
     }
     
-    func scrollViewDidEndDecelerating(scrollView: ZCarousel) {
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         //1
         page = scrollView.contentOffset.x / self.frame.width
         //2

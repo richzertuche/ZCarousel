@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, ZCarouselDelegate {
 
-    var menu: ZCarousel!
-    var images: ZCarousel!
+    var menu: ZCarousel?
+    var images: ZCarousel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +21,8 @@ class ViewController: UIViewController, ZCarouselDelegate {
             y: 100,
             width: (self.view.frame.size.width/5)*3,
             height: 50))
-        menu.ZCdelegate = self
-        menu.addButtons(["iOS 8 by Tutorials", "Swift by Tutorials", "Core Data by Tutorials", "WatchKit by Tutorials"])
+        menu?.ZCdelegate = self
+        menu?.addButtons(["iOS 8 by Tutorials", "Swift by Tutorials", "Core Data by Tutorials", "WatchKit by Tutorials"])
         
         self.view.addSubview(menu!)
         
@@ -30,19 +30,21 @@ class ViewController: UIViewController, ZCarouselDelegate {
             y: 200,
             width: (self.view.frame.size.width/5)*3,
             height: 150))
-        images.ZCdelegate = self
+        images?.ZCdelegate = self
         
-        images.addImages(["1", "2", "3"])
+        images?.addImages(["1", "2", "3"])
         
-        self.view.addSubview(images)
+        if let images = images {
+            self.view.addSubview(images)
+        }
         
     }
     
-    func ZCarouselShowingIndex(scrollview: ZCarousel, index: Int) {
-        if scrollview == menu {
+    func ZCarouselShowingIndex(_ scrollView: ZCarousel, index: Int) {
+        if scrollView == menu {
             print("Showing Button at index \(index)")
         }
-        else if scrollview == images {
+        else if scrollView == images {
             print("Showing Image at index \(index)")
         }
     }
